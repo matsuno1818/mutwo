@@ -18,8 +18,8 @@ class User < ApplicationRecord
     validates :nickname, uniqueness: true, format: {with: Nickname, message: "Nickname has already been taken" }
     validates :email, uniqueness: true, format: { with: Email, message: "Email has already been taken" }
     validates :password, format: { with: Password, message: "Password Include both letters and numbers" }
-    validates :family_name, :first_name, format: { with: Zenkaku, message: "Full-width characters" }
-    validates :familyname_reading, :firstname_reading, format: { with: Zenkakukana, message: " Full-width katakana characters" }
+    validates :last_name, :first_name, format: { with: Zenkaku, message: "Full-width characters" }
+    validates :last_name_reading, :first_name_reading, format: { with: Zenkakukana, message: " Full-width katakana characters" }
     validates :birthday
   end
 end
