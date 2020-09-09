@@ -5,10 +5,10 @@ FactoryBot.define do
     password = Faker::Internet.password(min_length: 6)
     password { password }
     password_confirmation { password }
-    family_name { '阿部' }
+    last_name { '阿部' }
     first_name { '太郎' }
-    familyname_reading { 'アベ' }
-    firstname_reading { 'タロウ' }
+    last_name_reading { 'アベ' }
+    first_name_reading { 'タロウ' }
     birthday { '1931-01-01' }
   end
 end
