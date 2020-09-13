@@ -73,26 +73,6 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("First name Full-width characters")
     end
-    it 'last_name_readingが空だと保存できないこと' do
-      @user.last_name_reading = nil
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Last name reading can't be blank")
-    end
-    it 'last_name_readingが全角カタカナでないと保存できないこと' do
-      @user.last_name_reading = 'あべ'
-      @user.valid?
-      expect(@user.errors.full_messages).to include('Last name reading  Full-width katakana characters')
-    end
-    it 'first_name_readingが空だと保存できないこと' do
-      @user.first_name_reading = nil
-      @user.valid?
-      expect(@user.errors.full_messages).to include("First name reading can't be blank")
-    end
-    it 'first_name_readingが全角カタカナでないと保存できないこと' do
-      @user.first_name_reading = '太郎'
-      @user.valid?
-      expect(@user.errors.full_messages).to include("First name reading  Full-width katakana characters")
-    end
     it 'birthdayを選択していないと保存できないこと' do
       @user.birthday = nil
       @user.valid?
